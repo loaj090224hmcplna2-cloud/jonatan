@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Productos - Dulcería</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="logo">SweetTime</div>
+    <nav>
+      <a href="admin.html">Administrador</a>
+      <a href="ventas.html">Ventas</a>
+      <a href="index.html">Cerrar sesión</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h2>Catálogo de Productos</h2>
+
+    <!-- Formulario para agregar productos -->
+    <form id="formProducto">
+      <label>Nombre del producto:</label>
+      <input type="text" id="nombreProducto" required>
+
+      <label>Precio ($):</label>
+      <input type="number" id="precioProducto" min="0.01" step="0.01" required>
+
+      <label>Inventario:</label>
+      <input type="number" id="stockProducto" min="0" required>
+
+      <button type="submit" class="btn">Agregar producto</button>
+    </form>
+
+    <!-- Tabla de productos -->
+    <table class="table" id="tablaProductos">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Precio</th>
+          <th>Inventario</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Productos iniciales -->
+        <tr>
+          <td>001</td>
+          <td>Paleta de fresa</td>
+          <td>$5.00</td>
+          <td>50</td>
+        </tr>
+        <tr>
+          <td>002</td>
+          <td>Gomitas de osito</td>
+          <td>$10.00</td>
+          <td>120</td>
+        </tr>
+        <tr>
+          <td>003</td>
+          <td>Chocolates mixtos</td>
+          <td>$15.00</td>
+          <td>80</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    let contadorID = 4;
+
+    document.getElementById('formProducto').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const nombre = document.getElementById('nombreProducto').value.trim();
+      const precio = parseFloat(document.getElementById('precioProducto').value).toFixed(2);
+      const stock = parseInt(document.getElementById('stockProducto').value);
+
+      const tabla = document.getElementById('tablaProductos').querySelector('tbody');
+      const nuevaFila = document.createElement('tr');
+      const id = String(contadorID).padStart(3, '0');
+
+      nuevaFila.innerHTML = `
+        <td>${id}</td>
+        <td>${nombre}</td>
+        <td>$${precio}</td>
+        <td>${stock}</td>
+      `;
+
+      tabla.appendChild(nuevaFila);
+      contadorID++;
+
+      // Limpiar el formulario
+      document.getElementById('formProducto').reset();
+    });
+  </script>
+</body>
+</html>
+
