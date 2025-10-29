@@ -1,6 +1,4 @@
-/* style.css */
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
 
 * {
   margin: 0;
@@ -9,12 +7,12 @@
 }
 body {
   font-family: 'Poppins', sans-serif;
-  background: #fff4f2;
+  background: #f0f6ff;
   color: #333;
 }
 
 header {
-  background: linear-gradient(90deg, #ff6a85, #ff9472);
+  background: linear-gradient(90deg, #4a90e2, #72b6ff);
   color: #fff;
   padding: 20px 30px;
   display: flex;
@@ -42,7 +40,7 @@ nav a {
 }
 
 .btn {
-  background: #ff6a85;
+  background: #4a90e2;
   border: none;
   color: white;
   padding: 12px 20px;
@@ -54,7 +52,7 @@ nav a {
 }
 
 .btn:hover {
-  background: #ff4f6f;
+  background: #357ac9;
 }
 
 /* Login Form */
@@ -69,7 +67,7 @@ nav a {
 
 .login-form h2 {
   margin-bottom: 20px;
-  color: #ff6a85;
+  color: #4a90e2;
 }
 
 .login-form input {
@@ -101,6 +99,6 @@ nav a {
 }
 
 .table th {
-  background-color: #ff6a85;
+  background-color: #4a90e2;
   color: white;
 }
